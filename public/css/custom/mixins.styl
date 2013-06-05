@@ -1,0 +1,71 @@
+//- Custom Css Mixins
+background-top-down-gradient(startColor,stopColor,fallbackColor)
+  background fallbackColor
+  filter s('progid:DXImageTransform.Microsoft.gradient(startColorstr="%s",endColorstr="%s",GradientType=0)', startColor, stopColor)
+  background linear-gradient(top, startColor, stopColor)
+
+custom-button(fontColor,backColor)
+  color fontColor
+  text-shadow 0 -1px 0 rgba(0, 0, 0, 0.25)
+  background-repeat repeat-x
+  background-top-down-gradient(lighten(backColor,20%),darken(backColor,10%),lighten(backColor,10%))
+  border-color: darken(backColor, 20%) darken(backColor, 25%) darken(backColor, 30%);
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter none
+
+provision-attribute(attr,abbr)
+   for s in top right bottom left
+      for n in 0..20
+        .{abbr}-{n*5}
+          {attr}: (n*5px);
+        .{abbr}-{n*5}
+          {attr}: (n*5px);
+        .{abbr}-{n*5}-important
+          {attr}: (n*5px)!important;
+        .{abbr}-{s}-{n*5}
+          {attr}-{s}: (n*5px);
+        .{abbr}-{s}-{n*5}-important
+          {attr}-{s}: (n*5px)!important;
+      for m in 0..4
+        .{abbr}-{m}
+          {attr}: (m*1px);
+        .{abbr}-{m}
+          {attr}: (m*1px);
+        .{abbr}-{m}-important
+          {attr}: (m*1px)!important;
+        .{abbr}-{s}-{m}
+          {attr}-{s}: (m*1px);
+        .{abbr}-{s}-{m}-important
+          {attr}-{s}: (m*1px)!important;
+
+provision-widths()
+   for n in 0..60
+    .width-{n*5}
+      width (n*5px)
+    .width-{n*5}pct
+      width (n*5%)
+    .width-{n*5}-important
+      width (n*5px)!important
+      min-width (n*5px)!important
+    .width-{n*5}pct-important
+      width (n*5%)!important
+      min-width (n*5%)!important
+
+provision-heights()
+   for n in 0..20
+    .height-{n*5}
+      height (n*5px)
+    .height-{n*5}pct
+      height (n*5%)
+    .height-{n*5}-important
+      height (n*5px)!important
+      min-height (n*5px)!important
+    .height-{n*5}pct-important
+      height (n*5%)!important
+      min-height (n*5%)!important
+
+//-Build out margins, paddings, and widths programmatically
+provision-attribute('margin','margin')
+provision-attribute('padding','pad')
+provision-widths()
+provision-heights()

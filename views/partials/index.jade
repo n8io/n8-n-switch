@@ -1,0 +1,11 @@
+.row-fluid(data-ng-controller='Device_Controller').device-listing
+  .special
+    select(id="{{dimmer.address[0].split(' ').join('')}}",ng-model='level',ng-options='dv.value as dv.label for dv in dimmerValues')
+      option
+  .align-center(data-ng-show='!config || config === null')
+    i No configuration set
+  .progress.progress-striped.active(data-ng-show='config && !devices').device-loading
+    .bar(style='width: 100%;').align-center Loading devices...
+  ul.unstyled
+    li.row-fluid(ng-repeat="device in devices | orderBy:'name[0]'").device-row
+      button.btn.span12.align-center(ng-class="{true:'btn-inverse',false:''}[device.property[0].$.value == '0']",ng-click='toggleDevice(device)') {{device.name[0]}}

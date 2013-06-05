@@ -1,0 +1,41 @@
+!!! 5
+html
+  head(ng-app='ngApp')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    link(rel='shortcut icon', href='/img/favicon.ico')
+    link(rel='icon', type='image/ico', href='/img/favicon.ico')
+    link(rel='apple-touch-icon-precomposed', href='/img/apple-touch-icon-precomposed.png')
+    link(rel='apple-touch-icon', href='/img/apple-touch-icon.png')
+
+    link(rel='stylesheet',href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css')
+    link(rel='stylesheet',href='/css/custom/bootstrap.custom.css')
+    link(rel='stylesheet',href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css')
+    link(rel='stylesheet',href='/css/custom/bootstrap-responsive.custom.css')
+    link(rel='stylesheet',href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.2/css/font-awesome.min.css')
+    link(rel='stylesheet',href='/css/custom/style.css')
+    link(rel='stylesheet',href='http://fonts.googleapis.com/css?family=Roboto+Slab')
+    link(rel='stylesheet',href='/css/bootstrap-modal/bootstrap-modal.css')
+    block head
+  body(ng-controller='Main_Controller')
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner.header
+        a.brand(href='#/').float-left-i
+          i.icon-home.icon-large
+        span.line-height-45 The Clark House
+        a.brand(href='#/config').float-right-i
+          i.icon-cog.icon-large
+    .row-fluid
+      div(data-ng-view)
+    script(src='//code.jquery.com/jquery-latest.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.0/underscore.string.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.4/angular.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.4/angular-resource.min.js')
+    script(src='/js/bootstrap-modal/bootstrap-modal.js')
+    script(src='/js/bootstrap-modal/bootstrap-modalmanager.js')
+    script(src='/js/persist/persist.js')
+    script(src='/js/script.js')
+    script(src='/js/angular/app.js')
+    block scripts

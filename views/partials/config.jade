@@ -1,0 +1,22 @@
+.row-fluid(data-ng-controller='Config_Controller').config-listing
+  .row-fluid
+    .span12 ISY IP / Url
+  .row-fluid
+    input(type='text',data-ng-model='config.isy_url',placeholder='192.168.0.1').span12
+  .row-fluid
+    p ISY Port
+  .row-fluid
+    input(type='number',data-ng-model='config.isy_port',placeholder='80').span12
+  .row-fluid
+    p Username
+  .row-fluid
+    input(type='text',data-ng-model='config.user',placeholder='admin').span12
+  .row-fluid
+    p Password
+  .row-fluid
+    input(type='password',data-ng-model='config.pwd',placeholder='Password').span12
+  .row-fluid.pad-top-10
+    button.btn(data-ng-click='onTestConfig()') Test
+    .float-right
+      button.btn.btn-primary(data-ng-click='onSaveConfig()') Save Configuration
+    .clearfix

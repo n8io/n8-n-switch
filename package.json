@@ -1,0 +1,20 @@
+{
+  "name": "",
+  "description":"",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express" : "*",
+    "client-sessions":"*",
+    "underscore":"*",
+    "underscore.string":"*",
+    "stylus" : "*",
+    "nib": "*",
+    "jade" : "*",
+    "request": "*",
+    "xml2js":"*"
+  }
+}
